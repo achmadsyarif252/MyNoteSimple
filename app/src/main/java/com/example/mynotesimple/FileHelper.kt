@@ -14,7 +14,7 @@ internal object FileHelper {
         fileModel.title = title
         fileModel.description = context.openFileInput(title).bufferedReader().useLines { lines ->
             lines.fold("") { some, text ->
-                "$some$text"
+                "$some\n$text"
             }
         }
         return fileModel
